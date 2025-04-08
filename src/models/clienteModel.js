@@ -1,11 +1,12 @@
-import connection from "../db.js";
+import { getConnection } from "../db.js";
 
-export async function criarCliente(cliente) {
+export async function createCliente(client) {
+  const connection = await getConnection();
   const {
     nome, cnpj, nome_fantasia, cep,
     logradouro, bairro, cidade, uf,
     complemento, email, telefone
-  } = cliente;
+  } = client;
 
   const [result] = await connection.execute(`
     INSERT INTO clientes (
@@ -21,3 +22,11 @@ export async function criarCliente(cliente) {
 
   return result.insertId;
 }
+
+
+export async function listClients() {
+  const connection = await getConnection();
+  const [rows] = await connection.execute('SELECT * FROM clientes');
+  return rows;
+}
+
