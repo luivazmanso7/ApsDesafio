@@ -1,4 +1,3 @@
-
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -17,4 +16,6 @@ export async function getConnection() {
     console.log('conectado ao MySQL');
   }
   return connection;
+
+  
 }
