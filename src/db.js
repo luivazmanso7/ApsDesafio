@@ -12,3 +12,6 @@ const connection = await mysql.createConnection({
 
 console.log('conectado ao MySQL');
 export default connection;
+
+
+
