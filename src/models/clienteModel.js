@@ -57,7 +57,7 @@ export async function updateCliente(id, cliente) {
 
 
 
-export async function deleteClient(id,) {
+export async function deleteClient(id) {
   const connection = await getConnection();
   const [result] = await connection.execute(`
     DELETE FROM clientes WHERE id = ?
