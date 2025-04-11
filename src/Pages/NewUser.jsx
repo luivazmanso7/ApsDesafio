@@ -9,7 +9,7 @@ export default function NewUser() {
 
   const handleSubmit = async (usuario) => {
     try {
-      await axios.post("http://localhost:3000/usuarios", usuario);
+      await axios.post("http://localhost:3000/clientes", usuario);
       navigate("/"); 
     } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);

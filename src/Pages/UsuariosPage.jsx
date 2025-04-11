@@ -12,7 +12,7 @@ const PageWrapper = styled(Container)`
 export default function UsuariosPage() {
   return (
     <PageWrapper maxWidth="lg">
-      {/* Caixa flex que coloca o título à esquerda e o botão à direita */}
+      {}
       <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
         <Typography variant="h5">Lista de Usuários</Typography>
         <Button variant="contained" component={Link} to="/novo-usuario">

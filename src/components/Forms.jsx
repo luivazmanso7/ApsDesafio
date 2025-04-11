@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, TextField, Button, Typography, Grid, Paper } from "@mui/material";
 import styled from "styled-components";
+import isEqual from "lodash/isEqual";
 
 const FormPaper = styled(Paper)`
   padding: 16px;
@@ -36,9 +37,11 @@ export default function Forms({
     ...initialData,
   });
 
-  // Se initialData mudar (por exemplo, no caso de edição), atualiza os dados do formulário
   useEffect(() => {
-    setCliente(prev => ({ ...prev, ...initialData }));
+    // Só atualiza se initialData for realmente diferente do estado atual
+    if (!isEqual(initialData, {})) {
+      setCliente(prev => (isEqual(prev, initialData) ? prev : { ...prev, ...initialData }));
+    }
   }, [initialData]);
 
   const handleChange = (e) => {
