@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-  Typography,
-  Box,
-  IconButton,
-  Tooltip,
-} from "@mui/material";
+import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper,Typography,Box,IconButton,Tooltip, } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from "react-router-dom"; 
 
 export default function UserTable() {
+  
   const [usuarios, setUsuarios] = useState([]);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +40,9 @@ export default function UserTable() {
 
   const handleEdit = (usuario) => {
     console.log("Editar:", usuario);
-    // Aqui você pode abrir um modal ou navegar para a página de edição
+    navigate(`/editar/${usuario.id}`);
+    
+    
   };
 
   const handleDelete = async (id) => {

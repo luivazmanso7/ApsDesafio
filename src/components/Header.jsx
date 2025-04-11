@@ -1,32 +1,32 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Avatar } from '@mui/material';
-import styled from 'styled-components';
-import logoAsc from '../assets/Logo.png'; // 👈 com letra maiúscula se o arquivo tiver 'Logo.png'
+import React from "react";
+import { AppBar, Toolbar } from "@mui/material";
+import styled from "styled-components";
+import logoAsc from "../assets/Logo.png";
 
-// 🧩 Styled Components
-const StyledAppBar = styled(AppBar)`
+const FullWidthAppBar = styled(AppBar)`
+  width: 100%; /* Ocupa 100% da largura */
+  background-color: white !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-const StyledToolbar = styled(Toolbar)`
+const FullWidthToolbar = styled(Toolbar)`
   display: flex;
   align-items: center;
+  padding: 0 16px;  /* Espaçamento interno, se desejar */
 `;
 
-const Logo = styled(Avatar)`
-  width: 48px;
+const LogoImage = styled.img`
   height: 48px;
   margin-right: 16px;
 `;
 
-
-
 export default function Header() {
   return (
-    <StyledAppBar position="static" color="primary">
-      <StyledToolbar>
-        <Logo alt="Logo ASC" src={logoAsc} />
-      </StyledToolbar>
-    </StyledAppBar>
+    <FullWidthAppBar position="static">
+      <FullWidthToolbar>
+        <LogoImage alt="Logo ASC" src={logoAsc} />
+        {/* Você pode adicionar outros elementos, como o título, aqui */}
+      </FullWidthToolbar>
+    </FullWidthAppBar>
   );
 }

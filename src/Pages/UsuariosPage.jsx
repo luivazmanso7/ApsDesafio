@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import UserTable from "../components/UseTable";
 
 const PageWrapper = styled(Container)`
