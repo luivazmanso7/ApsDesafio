@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import UsuariosPage from "./Pages/UsuariosPage";
 import EditClient from "./Pages/EditClient";
+import NewUser from "./Pages/NewUser";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<UsuariosPage />} />
         <Route path="/editar/:id" element={<EditClient />} />
+        <Route path="/novo-usuario" element={<NewUser />} />
       </Routes>
     </>
   );

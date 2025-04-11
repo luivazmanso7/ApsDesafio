@@ -58,9 +58,6 @@ export default function UserTable() {
 
   return (
     <Box sx={{ width: '100%', padding: 2 }}>
-      <Typography variant="h6" sx={{ mb: 2 }}>
-        Lista de Usuários
-      </Typography>
       <TableContainer component={Paper} sx={{ width: '100%' }}>
         <Table
           sx={{
