@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Forms from "../components/Forms"; 
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { criarCliente } from "../services/clienteService";
 
 export default function NewUser() {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ export default function NewUser() {
 
   const handleSubmit = async (usuario) => {
     try {
-      await axios.post("http://localhost:3000/clientes", usuario);
+      await criarCliente(usuario);
       navigate("/"); 
     } catch (error) {
       console.error("Erro ao cadastrar usuário:", error);

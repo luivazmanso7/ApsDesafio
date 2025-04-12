@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:3000/clientes';
+const BASE_URL_CNPJ = 'https://publica.cnpj.ws/cnpj';
+const BASE_URL_CEP = 'https://viacep.com.br/ws';
 
 export async function getClientes() {
   const response = await axios.get(BASE_URL);
@@ -29,12 +31,12 @@ export async function deletarCliente(id) {
 
 export async function consultarCNPJ(cnpj) {
   const cleaned = cnpj.replace(/\D/g, '');
-  const response = await axios.get(`https://publica.cnpj.ws/cnpj/${cleaned}`);
+  const response = await axios.get(`${BASE_URL_CNPJ}/${cleaned}`);
   return response.data;
 }
 
 export async function consultarCEP(cep) {
   const cleanedCep = cep.replace(/\D/g, '');
-  const response = await axios.get(`https://viacep.com.br/ws/${cleanedCep}/json`);
+  const response = await axios.get(`${BASE_URL_CEP}/${cleanedCep}/json`);
   return response.data;
 }

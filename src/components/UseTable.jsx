@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper,Typography,Box,IconButton,Tooltip, } from "@mui/material";
+import { getClientes, deletarCliente } from "../services/clienteService";
+import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper,Box,IconButton,Tooltip, } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from "react-router-dom"; 
@@ -13,8 +13,8 @@ export default function UserTable() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/clientes");
-        setUsuarios(res.data);
+        const data = await getClientes();
+        setUsuarios(data);
       } catch (error) {
         console.error("Erro ao buscar usuários:", error);
       }
@@ -41,14 +41,12 @@ export default function UserTable() {
   const handleEdit = (usuario) => {
     console.log("Editar:", usuario);
     navigate(`/editar/${usuario.id}`);
-    
-    
   };
 
   const handleDelete = async (id) => {
     if (window.confirm("Tem certeza que deseja excluir este cliente?")) {
       try {
-        await axios.delete(`http://localhost:3000/clientes/${id}`);
+        await deletarCliente(id);
         setUsuarios((prev) => prev.filter((u) => u.id !== id));
       } catch (error) {
         console.error("Erro ao excluir cliente:", error);

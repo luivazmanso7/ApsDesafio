@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { getCliente, atualizarCliente } from "../services/clienteService";
 import Forms from "../components/Forms";
 
 
@@ -13,8 +13,8 @@ export default function EditClient() {
   useEffect(() => {
     const fetchCliente = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/clientes/${id}`);
-        setInitialData(response.data);
+        const data = await getCliente(id);
+        setInitialData(data);
       } catch (error) {
         console.error("Erro ao buscar cliente:", error);
       }
@@ -24,7 +24,7 @@ export default function EditClient() {
 
   const handleUpdate = async (clienteAtualizado) => {
     try {
-      await axios.put(`http://localhost:3000/clientes/${id}`, clienteAtualizado);
+      await atualizarCliente(id, clienteAtualizado);
       navigate("/");
     } catch (error) {
       console.error("Erro ao atualizar cliente:", error);
