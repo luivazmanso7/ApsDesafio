@@ -12,6 +12,7 @@
   "dependencies": {
     "@mui/icons-material": "^7.0.2",
     "axios": "^1.8.4",
+    "consultar-cnpj": "^1.0.20",
     "lodash": "^4.17.21",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

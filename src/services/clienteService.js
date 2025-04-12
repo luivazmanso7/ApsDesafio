@@ -7,7 +7,7 @@ export async function getClientes() {
   return response.data;
 }
 
-export async function getCliente(id) {
+export async function getCliente(id) { //especifico 
   const response = await axios.get(`${BASE_URL}/${id}`);
   return response.data;
 }
@@ -24,5 +24,17 @@ export async function atualizarCliente(id, dados) {
 
 export async function deletarCliente(id) {
   const response = await axios.delete(`${BASE_URL}/${id}`);
+  return response.data;
+}
+
+export async function consultarCNPJ(cnpj) {
+  const cleaned = cnpj.replace(/\D/g, '');
+  const response = await axios.get(`https://publica.cnpj.ws/cnpj/${cleaned}`);
+  return response.data;
+}
+
+export async function consultarCEP(cep) {
+  const cleanedCep = cep.replace(/\D/g, '');
+  const response = await axios.get(`https://viacep.com.br/ws/${cleanedCep}/json`);
   return response.data;
 }

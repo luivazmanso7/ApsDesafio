@@ -1,11 +1,11 @@
-
-import React from "react";
+import React, { useState } from "react";
 import Forms from "../components/Forms"; 
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function NewUser() {
   const navigate = useNavigate();
+  const [initialData, setInitialData] = useState({});
 
   const handleSubmit = async (usuario) => {
     try {
@@ -19,6 +19,8 @@ export default function NewUser() {
   return (
     <Forms
       onSubmit={handleSubmit}
+      initialData={initialData}
+      setInitialData={setInitialData}
       title="Cadastrar Novo Usuário"
       buttonText="Cadastrar"
     />

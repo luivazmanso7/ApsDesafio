@@ -95,7 +95,7 @@ export default function UserTable() {
               >
                 <TableCell sx={nowrapCenter}>{usuario.cnpj}</TableCell>
                 <TableCell sx={wrapLeft}>{usuario.nome}</TableCell>
-                <TableCell sx={wrapLeft}>{usuario.nomefantasia}</TableCell>
+                <TableCell sx={wrapLeft}>{usuario.nome_fantasia}</TableCell>
                 <TableCell sx={nowrapCenter}>{usuario.cep}</TableCell>
                 <TableCell sx={wrapLeft}>{usuario.logradouro}</TableCell>
                 <TableCell sx={wrapLeft}>{usuario.bairro}</TableCell>
