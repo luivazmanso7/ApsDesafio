@@ -1,4 +1,4 @@
-import { listClients, createCliente, updateCliente, deleteClient} from '../models/clienteModel.js';
+import { listClients, createCliente, updateCliente, deleteClient, getCliente} from '../models/clienteModel.js';
 
 export async function listClientesController(req,res) {
     try {
@@ -53,5 +53,18 @@ export async function deleteClienteController(req, res) {
     }
   } catch (error) {
     res.status(500).json({ error: "Erro ao deletar cliente" });
+  }
+}
+
+  export async function getClienteController(req, res) {
+  const { id } = req.params;
+  try {
+    const cliente = await getCliente(id);
+    if (!cliente) {
+      return res.status(404).json({ error: 'Cliente não encontrado' });
+    }
+    res.status(200).json(cliente);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao buscar cliente' });
   }
 }

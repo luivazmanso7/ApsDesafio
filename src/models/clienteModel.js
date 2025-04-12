@@ -67,4 +67,11 @@ export async function deleteClient(id) {
 }
 
 
+export async function getCliente(id) {
+  const connection = await getConnection();
+  const [rows] = await connection.execute('SELECT * FROM clientes WHERE id = ?', [id]);
+  return rows[0];
+}
+
+
   
