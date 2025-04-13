@@ -78,7 +78,7 @@ O backend estará disponível em: http://localhost:3000
 cd frontend
 npm install
 npm run dev
-
+````
 O frontend será executado em: http://localhost:5173
 
 ⸻
