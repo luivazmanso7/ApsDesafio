@@ -29,13 +29,13 @@ Este projeto fullstack foi desenvolvido como parte de um desafio acadêmico (APS
 
 ##  Funcionalidades
 
-- ✅ Cadastro de clientes
-- ✅ Listagem de clientes
-- ✅ Edição de dados
-- ✅ Exclusão de clientes
-- ✅ Validação de CNPJ com dígito verificador
-- ✅ Preenchimento automático de informações da empresa via CNPJ
-- ✅ Preenchimento automático de endereço via CEP
+- Cadastro de clientes
+- Listagem de clientes
+- Edição de dados
+- Exclusão de clientes
+- Validação de CNPJ com dígito verificador
+- Preenchimento automático de informações da empresa via CNPJ
+- Preenchimento automático de endereço via CEP
 
 ---
 
@@ -65,13 +65,15 @@ PORT=3000
 
 Inicie o servidor:
 
-node src/index.js
+cd src/
+node index.js
+
 
 O backend estará disponível em: http://localhost:3000
 
 ⸻
 
-💻 2. Configuração do Frontend
+ 2. Configuração do Frontend
 
 cd frontend
 npm install
@@ -111,7 +113,7 @@ Aps-Crud/
 
 ⸻
 
-📋 Regras de Negócio
+ Regras de Negócio
 	•	CNPJ:
 	•	Validação do dígito verificador ao digitar
 	•	Preenchimento automático de informações da empresa via CNPJ.ws
@@ -120,7 +122,7 @@ Aps-Crud/
 
 ⸻
 
-📄 Licença
+ Licença
 
 As APIs públicas utilizadas seguem suas respectivas políticas de uso. Para uso comercial ou em produção, consulte os termos de serviço das APIs.
 
