@@ -7,8 +7,9 @@ Este é um projeto fullstack. A aplicação permite o gerenciamento completo de 
 ## Organização do Projeto
 
 O gerenciamento das tarefas, acompanhamento de progresso e divisão de responsabilidades foram realizados utilizando o [Jira]
-Acesse o board do projeto:
- [Clique aqui para ver o Jira do projeto](https://luivaz2013.atlassian.net/jira/software/projects/MBA/boards/1?assignee=unassigned%2C712020%3A47e360cf-5c7e-4190-8512-57821f3a95f2)
+
+### Board no Jira:
+![Board do Jira](./assets/jira-board.png)
 
 ##  Tecnologias Utilizadas
 
