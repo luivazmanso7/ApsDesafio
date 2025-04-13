@@ -145,7 +145,17 @@ O gerenciamento das tarefas, acompanhamento de progresso e divisão de responsab
 ### Board no Jira:
 ![Board do Jira](./assets/jira-board.png)
 
+---
 
+##  Branches do Projeto
+
+O projeto é organizado com as seguintes branches:
+
+- `main`: branch principal contendo a versão unificada e estável do projeto.
+- `frontend/clientes-crud`: branch dedicada ao desenvolvimento do frontend (React).
+- `backend/clientes-crud`: branch dedicada ao desenvolvimento do backend (Node.js + Express).
+
+> Recomendado utilizar a branch `main` para clonar e rodar o projeto completo. As demais estão disponíveis para fins de desenvolvimento e histórico.
 
 
  Licença
