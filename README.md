@@ -4,6 +4,10 @@
 Este é um projeto fullstack. A aplicação permite o gerenciamento completo de clientes, com validações automáticas de **CNPJ** e preenchimento de **endereços via CEP**, utilizando tecnologias React no frontend e  Node.js backend.
 
 ---
+## Organização do Projeto
+
+O gerenciamento das tarefas, acompanhamento de progresso e divisão de responsabilidades foram realizados utilizando o [Jira]([https://www.atlassian.com/br/software/jira](https://luivaz2013.atlassian.net/jira/software/projects/MBA/boards/1?assignee=unassigned%2C712020%3A47e360cf-5c7e-4190-8512-57821f3a95f2)), garantindo organização, ao longo do desenvolvimento do projeto.
+---
 
 ##  Tecnologias Utilizadas
 
@@ -78,7 +82,7 @@ O backend estará disponível em: http://localhost:3000
 cd frontend
 npm install
 npm run dev
-````
+
 O frontend será executado em: http://localhost:5173
 
 ⸻
@@ -109,7 +113,7 @@ Aps-Crud/
 │   │   └── App.jsx
 │   └── .env
 
-
+````
 
 ⸻
 
