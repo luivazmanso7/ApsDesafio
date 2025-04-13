@@ -61,6 +61,7 @@ DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=sua_senha
 DB_DATABASE=nome_do_banco
+PORT=3000
 
 Inicie o servidor:
 
