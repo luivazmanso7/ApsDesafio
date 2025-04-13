@@ -4,12 +4,6 @@
 Este é um projeto fullstack. A aplicação permite o gerenciamento completo de clientes, com validações automáticas de **CNPJ** e preenchimento de **endereços via CEP**, utilizando tecnologias React no frontend e  Node.js backend.
 
 ---
-## Organização do Projeto
-
-O gerenciamento das tarefas, acompanhamento de progresso e divisão de responsabilidades foram realizados utilizando o [Jira]
-
-### Board no Jira:
-![Board do Jira](./assets/jira-board.png)
 
 ##  Tecnologias Utilizadas
 
@@ -142,6 +136,15 @@ Aps-Crud/
 
 ###  Tela de Exclusão de Cliente
 ![Tela de Exclusão](./assets/delete.jpg)
+
+
+## Organização do Projeto
+
+O gerenciamento das tarefas, acompanhamento de progresso e divisão de responsabilidades foram realizados utilizando o [Jira]
+
+### Board no Jira:
+![Board do Jira](./assets/jira-board.png)
+
 
 
 
