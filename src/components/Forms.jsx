@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, TextField, Button, Typography, Grid, Paper } from "@mui/material";
+import { Container, TextField, Button, Typography, Grid, Paper, Alert, Snackbar } from "@mui/material";
 import styled from "styled-components";
 import isEqual from "lodash/isEqual";
 import { consultarCNPJ, consultarCEP } from "../services/clienteService";
@@ -131,7 +131,6 @@ export default function Forms({
 
   //funcao validar cpnj 
   function validarCNPJ(cnpj) {
-    // Remove tudo que não for número
     cnpj = cnpj.replace(/\D/g, '');
   
     if (cnpj.length !== 14) return false;
@@ -282,6 +281,13 @@ export default function Forms({
           </Grid>
         </form>
       </FormPaper>
+      {(cnpjError || cepError) && (
+        <Snackbar open autoHideDuration={3000}>
+          <Alert severity="error" sx={{ width: '100%' }}>
+            {cnpjError ? 'CNPJ inválido!' : 'CEP inválido ou não encontrado!'}
+          </Alert>
+        </Snackbar>
+      )}
     </Container>
   );
 }

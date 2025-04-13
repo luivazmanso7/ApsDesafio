@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getClientes, deletarCliente } from "../services/clienteService";
-import { Table,TableBody,TableCell,TableContainer,TableHead,TableRow,Paper,Box,IconButton,Tooltip, } from "@mui/material";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Box, IconButton, Tooltip, Snackbar, Alert } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from "react-router-dom"; 
@@ -9,6 +9,8 @@ export default function UserTable() {
   
   const [usuarios, setUsuarios] = useState([]);
   const navigate = useNavigate(); 
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,6 +51,8 @@ export default function UserTable() {
         await deletarCliente(id);
         setUsuarios((prev) => prev.filter((u) => u.id !== id));
       } catch (error) {
+        setAlertMessage("Erro ao excluir cliente.");
+        setAlertOpen(true);
         console.error("Erro ao excluir cliente:", error);
       }
     }
@@ -125,6 +129,11 @@ export default function UserTable() {
           </TableBody>
         </Table>
       </TableContainer>
+      <Snackbar open={alertOpen} autoHideDuration={3000} onClose={() => setAlertOpen(false)}>
+        <Alert onClose={() => setAlertOpen(false)} severity="error" sx={{ width: '100%' }}>
+          {alertMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
