@@ -1,9 +1,15 @@
 
 #  APS Crud - Projeto Fullstack
 
-Este projeto fullstack foi desenvolvido como parte de um desafio acadêmico (APS). A aplicação permite o gerenciamento completo de clientes, com validações automáticas de **CNPJ** e preenchimento de **endereços via CEP**, utilizando tecnologias modernas no frontend e backend.
+Este é um projeto fullstack. A aplicação permite o gerenciamento completo de clientes, com validações automáticas de **CNPJ** e preenchimento de **endereços via CEP**, utilizando tecnologias React no frontend e  Node.js backend.
 
 ---
+## Organização do Projeto
+
+O gerenciamento das tarefas, acompanhamento de progresso e divisão de responsabilidades foram realizados utilizando o [Jira]
+
+### Board no Jira:
+![Board do Jira](./assets/jira-board.png)
 
 ##  Tecnologias Utilizadas
 
@@ -109,7 +115,7 @@ Aps-Crud/
 │   │   └── App.jsx
 │   └── .env
 
-
+````
 
 ⸻
 
@@ -121,6 +127,23 @@ Aps-Crud/
 	•	Preenchimento automático de logradouro, bairro, cidade e estado via ViaCEP
 
 ⸻
+
+##  Exemplos da Interface
+
+###  Tela de Cadastro
+![Tela de Cadastro](./assets/cadastro.jpg)
+
+---
+
+###  Tela de Listagem de Clientes
+![Tela de Listagem](./assets/listagem.jpg)
+
+---
+
+###  Tela de Exclusão de Cliente
+![Tela de Exclusão](./assets/delete.jpg)
+
+
 
  Licença
 
