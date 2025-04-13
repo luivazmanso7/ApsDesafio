@@ -3,8 +3,14 @@ import { AppBar, Toolbar } from "@mui/material";
 import styled from "styled-components";
 import logoAsc from "../assets/Logo.png";
 
+const TopBar = styled.div`
+  width: 100%;
+  height: 8px;
+  background-color: #1976d2; /* Azul padrão do Material UI */
+`;
+
 const FullWidthAppBar = styled(AppBar)`
-  width: 100%; /* Ocupa 100% da largura */
+  width: 100%;
   background-color: white !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
@@ -12,7 +18,7 @@ const FullWidthAppBar = styled(AppBar)`
 const FullWidthToolbar = styled(Toolbar)`
   display: flex;
   align-items: center;
-  padding: 0 16px;  /* Espaçamento interno, se desejar */
+  padding: 0 16px;
 `;
 
 const LogoImage = styled.img`
@@ -22,11 +28,13 @@ const LogoImage = styled.img`
 
 export default function Header() {
   return (
-    <FullWidthAppBar position="static">
-      <FullWidthToolbar>
-        <LogoImage alt="Logo ASC" src={logoAsc} />
-        {/* Você pode adicionar outros elementos, como o título, aqui */}
-      </FullWidthToolbar>
-    </FullWidthAppBar>
+    <>
+      <TopBar />
+      <FullWidthAppBar position="static">
+        <FullWidthToolbar>
+          <LogoImage alt="Logo ASC" src={logoAsc} />
+        </FullWidthToolbar>
+      </FullWidthAppBar>
+    </>
   );
 }
