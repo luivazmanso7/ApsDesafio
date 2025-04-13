@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Forms from "../components/Forms"; 
 import { useNavigate } from "react-router-dom";
 import { criarCliente } from "../services/clienteService";
-import { Snackbar, Alert } from "@mui/material";
+import { Snackbar, Alert, Box } from "@mui/material";
+
 
 export default function NewUser() {
   const navigate = useNavigate();
@@ -23,13 +24,16 @@ export default function NewUser() {
 
   return (
     <>
-      <Forms
-        onSubmit={handleSubmit}
-        initialData={initialData}
-        setInitialData={setInitialData}
-        title="Cadastrar Novo Usuário"
-        buttonText="Cadastrar"
-      />
+      <Box sx={{ mt: 6 }}>
+        <Forms
+          onSubmit={handleSubmit}
+          initialData={initialData}
+          setInitialData={setInitialData}
+          title="Cadastrar Novo Usuário"
+          buttonText="Cadastrar"
+        />
+      </Box>
+  
       <Snackbar open={alertOpen} autoHideDuration={3000} onClose={() => setAlertOpen(false)}>
         <Alert onClose={() => setAlertOpen(false)} severity="error" sx={{ width: '100%' }}>
           {alertMessage}
